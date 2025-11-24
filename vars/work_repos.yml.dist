@@ -1,0 +1,9 @@
+---
+# Copy this file to work_repos.yml and add your work repositories
+# cp vars/work_repos.yml.dist vars/work_repos.yml
+# Then edit vars/work_repos.yml with your actual repositories
+work_repos:
+  - git@github.com:example-org/example-repo.git
+  - git@github.com:example-org/another-repo.git
+  # Add more repositories as needed
+

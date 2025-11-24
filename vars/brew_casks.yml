@@ -1,0 +1,36 @@
+---
+brew_casks:
+  # - blackhole-16ch
+  - anki
+  - balenaetcher
+  - chatgpt
+  - choosy
+  - cloudflare-warp
+  - codex
+  - cursor
+  - discord
+  - firefox
+  - font-0xproto-nerd-font
+  - font-hack-nerd-font
+  - font-iosevka-nerd-font
+  - font-jetbrains-mono-nerd-font
+  - font-zed-mono-nerd-font
+  - ghostty
+  - github
+  - granola
+  - intellij-idea
+  - karabiner-elements
+  - notion
+  - obsidian
+  - orbstack
+  - proxy-audio-device
+  - raycast
+  - sf-symbols
+  - slack
+  - stats
+  - tailscale
+  - ungoogled-chromium
+  - vagrant
+  - visual-studio-code
+  - windscribe
+  - zoom

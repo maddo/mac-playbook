@@ -1,0 +1,4 @@
+---
+mas_apps:
+  # - { id: 904280696, name: "Things 3", app_path: "/Applications/Things3.app" }
+  - { id: 497799835, name: "Xcode",    app_path: "/Applications/Xcode.app" }

@@ -1,0 +1,24 @@
+---
+stow_targets:
+  ghostty: "{{ ansible_env.HOME }}/.config/ghostty"
+  karabiner: "{{ ansible_env.HOME }}/.config/karabiner"
+  git: "{{ ansible_env.HOME }}/.gitconfig"
+  zsh: "{{ ansible_env.HOME }}/.zshrc"
+  tmux: "{{ ansible_env.HOME }}/.tmux.conf"
+  yazi: "{{ ansible_env.HOME }}/.config/yazi"
+  scripts: "{{ ansible_env.HOME }}/bin"
+  ssh: "{{ ansible_env.HOME }}/.ssh/config"
+  nvim-nightly: "{{ ansible_env.HOME }}/.config/nvim"
+  zinit: "{{ ansible_env.HOME }}/.config/zinit"
+stow_packages:
+  - ghostty
+  - karabiner
+  - git
+  - nvim-nightly
+  - scripts
+  - ssh
+  - tmux
+  - yazi
+  - zinit
+  - zsh
+

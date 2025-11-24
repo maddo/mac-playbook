@@ -1,0 +1,39 @@
+---
+brew_packages:
+  - bob
+  - fd
+  - ffmpeg
+  # - font-symbols-only-nerd-font
+  - fontconfig
+  - fzf
+  - gh
+  - go
+  - imagemagick
+  - k9s
+  - kubelogin
+  - kubernetes-cli
+  - lazygit
+  - mas
+  - minikube
+  - node
+  - p7zip
+  - pngpaste
+  - pnpm
+  - poppler
+  - pyenv
+  - pyenv-virtualenv
+  - resvg
+  - rg
+  - ripgrep
+  - rust
+  - sevenzip
+  - socat
+  - stow
+  - tlrc
+  - tmux
+  - tree
+  - wget
+  - yazi
+  - zinit
+  - zoxide
+  - zsh

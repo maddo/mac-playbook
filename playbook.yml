@@ -1,0 +1,78 @@
+---
+- name: Setup development macbook
+  hosts: local
+  connection: local
+  gather_facts: true
+
+  collections:
+    - community.general
+    - community.general.mas
+
+  vars_files:
+    - vars/brew_packages.yml
+    - vars/brew_casks.yml
+    - vars/mas_apps.yml
+    - vars/stow_targets.yml
+
+  vars:
+    dotfiles_repo: "git@github.com:maddo/dotfiles.git"
+    dotfiles_dir: "{{ ansible_env.HOME }}/dotfiles"
+
+    # Each entry corresponds to a folder inside the repo
+
+  tasks:
+    - name: Check if Homebrew exists
+      stat:
+        path: /opt/homebrew/bin/brew
+      register: brew_check
+
+    - name: Install Homebrew (Apple Silicon)
+      when: not brew_check.stat.exists
+      shell: |
+        /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+      args:
+        creates: /opt/homebrew/bin/brew
+
+    - name: Install brew packages
+      community.general.homebrew:
+        name: "{{ brew_packages }}"
+        state: present
+
+    - name: Install brew casks
+      community.general.homebrew_cask:
+        name: "{{ brew_casks }}"
+        state: present
+
+    # - name: Install Mac App Store apps
+    #   community.general.mas:
+    #     id: "{{ item.id }}"
+    #     state: present
+    #   loop: "{{ mas_apps }}"
+    #   loop_control:
+    #     label: "{{ item.name }}"
+
+    - name: Clone dotfiles repository
+      git:
+        repo: "{{ dotfiles_repo }}"
+        dest: "{{ dotfiles_dir }}"
+        version: main
+        update: yes
+
+    - name: Install Neovim nightly with bob
+      shell: /opt/homebrew/bin/bob use nightly
+      args:
+        creates: "{{ ansible_env.HOME }}/.local/share/bob/nvim-bin/nvim"
+
+    - name: Stow dotfiles
+      shell: |
+        cd {{ dotfiles_dir }} && /opt/homebrew/bin/stow {{ item }}
+      loop: "{{ stow_packages }}"
+      args:
+        creates: "{{ stow_targets[item] }}"
+
+    - name: Install tmux plugin manager (tpm)
+      git:
+        repo: https://github.com/tmux-plugins/tpm
+        dest: "{{ ansible_env.HOME }}/.tmux/plugins/tpm"
+        version: master
+        update: yes

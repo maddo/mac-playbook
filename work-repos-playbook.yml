@@ -1,0 +1,28 @@
+---
+- name: Setup work repositories
+  hosts: local
+  connection: local
+  gather_facts: true
+
+  vars_files:
+    - vars/work_repos.yml
+
+  vars:
+    work_dir: "{{ ansible_env.HOME }}/code/work"
+
+  tasks:
+    - name: Create work directory
+      file:
+        path: "{{ work_dir }}"
+        state: directory
+        mode: '0755'
+
+    - name: Clone work repositories
+      git:
+        repo: "{{ item }}"
+        dest: "{{ work_dir }}/{{ item | basename | regex_replace('\\.git$', '') }}"
+        accept_hostkey: yes
+      loop: "{{ work_repos }}"
+      loop_control:
+        label: "{{ item | basename | regex_replace('\\.git$', '') }}"
+
