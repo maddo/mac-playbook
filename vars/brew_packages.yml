@@ -1,9 +1,9 @@
 ---
 brew_packages:
+  # - font-symbols-only-nerd-font
   - bob
   - fd
   - ffmpeg
-  # - font-symbols-only-nerd-font
   - fontconfig
   - fzf
   - gh
@@ -24,6 +24,7 @@ brew_packages:
   - pyenv-virtualenv
   - resvg
   - rg
+  - rga
   - ripgrep
   - rust
   - sevenzip
