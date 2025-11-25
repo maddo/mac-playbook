@@ -15,6 +15,7 @@ brew_packages:
   - lazygit
   - mas
   - minikube
+  - mysql-client
   - node
   - p7zip
   - pngpaste
