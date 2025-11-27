@@ -19,3 +19,4 @@ pip3 install ansible
 
 ## TODO
 - [ ] get `mas` working
+- [ ] Add npm installations? i.e. `mermaid-js/mermaid-cli`
