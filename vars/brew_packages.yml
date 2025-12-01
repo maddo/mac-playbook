@@ -3,6 +3,7 @@ brew_packages:
   # - font-symbols-only-nerd-font
   - bob
   - imagemagick
+  - pass
   - fd
   - ffmpeg
   - fontconfig

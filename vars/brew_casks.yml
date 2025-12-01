@@ -1,6 +1,7 @@
 ---
 brew_casks:
   # - blackhole-16ch
+  - gcloud-cli
   - anki
   - balenaetcher
   - chatgpt
