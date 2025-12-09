@@ -2,16 +2,14 @@
 brew_packages:
   # - font-symbols-only-nerd-font
   - bob
-  - imagemagick
-  - pass
   - fd
   - ffmpeg
   - fontconfig
   - fzf
   - gh
-  - gs
-  - tectonic
   - go
+  - gs
+  - imagemagick
   - imagemagick
   - k9s
   - kubelogin
@@ -21,7 +19,9 @@ brew_packages:
   - minikube
   - mysql-client
   - node
+  - openjdk
   - p7zip
+  - pass
   - pngpaste
   - pnpm
   - poppler
@@ -35,6 +35,7 @@ brew_packages:
   - sevenzip
   - socat
   - stow
+  - tectonic
   - tlrc
   - tmux
   - tree
