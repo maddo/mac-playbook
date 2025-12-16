@@ -1,6 +1,7 @@
 ---
 brew_casks:
   # - blackhole-16ch
+  - google-drive
   - gcloud-cli
   - anki
   - balenaetcher
