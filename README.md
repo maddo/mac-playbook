@@ -2,6 +2,8 @@
 
 How to get a macbook for development setup
 
+`ansible-playbook -i inventory playbook.yml -vvv`
+
 ## Manual Steps
 
 * Ensure Apple's command line tools are installed:
